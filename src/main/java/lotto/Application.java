@@ -3,6 +3,7 @@ package lotto;
 import lotto.domain.Lotto;
 import lotto.domain.LottoGenerator;
 import lotto.view.input.PurchaseAmount;
+import lotto.view.output.PurchaseLotto;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class Application {
         List<Lotto> lottos = LottoGenerator.purchase(amount);
 
         /// TODO 3. 발행한 로또 출력
+        PurchaseLotto.printLottos(lottos);
 
         /// TODO 4. 당첨 번호 입력받기
 
