@@ -14,7 +14,7 @@ public class LottoResults {
         DecimalFormat formatter = new DecimalFormat("#,###");
 
         for (Rank rank : Rank.values()) {
-            if (rank == Rank.MISS) continue; // 꽝은 출력 안 함
+            if (rank == Rank.MISS) continue;
 
             String reward = formatter.format(rank.getReward());
             int count = results.getOrDefault(rank, 0);
