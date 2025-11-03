@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class WinningNumbers {
 
     public static Lotto read() {
-        System.out.println("당첨 번호를 입력해 주세요.");
+        System.out.println("\n당첨 번호를 입력해 주세요.");
         String input = Console.readLine();
         WinningNumbersValidator.validate(input);
         List<Integer> numbers = parseNumbers(input);
