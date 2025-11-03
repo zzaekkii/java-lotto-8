@@ -1,8 +1,11 @@
 package lotto;
 
+import lotto.view.input.PurchaseAmount;
+
 public class Application {
     public static void main(String[] args) {
         /// TODO 1. 구매 금액 입력받기
+        int amount = readAndValidateAmount();
 
         /// TODO 2. 구매 금액에 맞게 로또 발행
 
@@ -17,5 +20,16 @@ public class Application {
         /// TODO 7. 당첨 통계 출력
 
         /// TODO 8. 수익률 출력
+    }
+
+    static int readAndValidateAmount() {
+        while (true) {
+            try {
+                return PurchaseAmount.read();
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }
