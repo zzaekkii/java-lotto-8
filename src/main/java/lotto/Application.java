@@ -3,6 +3,7 @@ package lotto;
 import lotto.domain.Lotto;
 import lotto.domain.LottoGenerator;
 import lotto.view.input.PurchaseAmount;
+import lotto.view.input.WinningNumbers;
 import lotto.view.output.PurchaseLotto;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class Application {
         PurchaseLotto.printLottos(lottos);
 
         /// TODO 4. 당첨 번호 입력받기
+        Lotto winningNumbers = readAndValidateWinningNumbers();
 
         /// TODO 5. 보너스 번호 입력받기
 
@@ -33,6 +35,17 @@ public class Application {
         while (true) {
             try {
                 return PurchaseAmount.read();
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    static Lotto readAndValidateWinningNumbers() {
+        while (true) {
+            try {
+                return WinningNumbers.read();
             }
             catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());

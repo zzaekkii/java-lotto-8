@@ -52,14 +52,14 @@
 - 구매 금액 제한이 따로 없는데, `복권및복권기금법시행령 제3조`에 따라 1회 최대 10만원까지만 허용.
 
 ### ⚠️ 프로그래밍 요구사항
-- [ ] 제공된 `Lotto` 클래스를 사용하여 구현 (필드 추가 금지, `numbers` 접근 제어자 변경 금지)
+- [x] 제공된 `Lotto` 클래스를 사용하여 구현 (필드 추가 금지, `numbers` 접근 제어자 변경 금지)
 - [x] 잘못된 값 입력 시 IllegalArgumentException 발생, "[ERROR]"로 시작하는 에러 메시지 출력 후 그 부분부터 다시 입력받기
 - [ ] 함수(또는 메서드)가 한 가지 일만 하도록 최대한 작게 만들기
 - [x] JUnit 5와 AssertJ를 이용해 기능 목록 정상 작동 테스트 코드 작성
 - [ ] indent(인덴트, 들여쓰기) depth 2 이하로
 - [ ] 함수(또는 메서드) 길이 15라인 이내로
-- [ ] 3항 연산자 사용 금지
-- [ ] else 및 switch/case 사용 금지
+- [x] 3항 연산자 사용 금지
+- [x] else 및 switch/case 사용 금지
 - [x] Java Enum을 적용해 프로그램 구현
-- [ ] 랜덤 값 추출은 `Randoms`의 `pickUniqueNumbersInRange()`를 활용
+- [x] 랜덤 값 추출은 `Randoms`의 `pickUniqueNumbersInRange()`를 활용
 - [x] 사용자 입력 값은 `Console`의 `readLine()`을 활용

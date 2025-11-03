@@ -1,13 +1,20 @@
 package lotto.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import lotto.exception.LottoException;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import static lotto.exception.ErrorMessage.*;
 
 public class Lotto {
     private final List<Integer> numbers;
     private static final int LOTTO_SIZE = 6;
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 45;
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
@@ -16,7 +23,19 @@ public class Lotto {
 
     private void validate(List<Integer> numbers) {
         if (numbers.size() != LOTTO_SIZE) {
-            throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
+            throw new LottoException(INVALID_COUNT);
+        }
+
+        Set<Integer> unique = new HashSet<>(numbers);
+        if (unique.size() != LOTTO_SIZE) {
+            throw new LottoException(DUPLICATED_NUMBER);
+        }
+
+        boolean invalidRange = numbers.stream()
+            .anyMatch(num -> num < MIN_NUMBER || num > MAX_NUMBER);
+
+        if (invalidRange) {
+            throw new LottoException(OUT_OF_RANGE);
         }
     }
 
