@@ -1,6 +1,10 @@
 package lotto;
 
+import lotto.domain.Lotto;
+import lotto.domain.LottoGenerator;
 import lotto.view.input.PurchaseAmount;
+
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
@@ -8,6 +12,7 @@ public class Application {
         int amount = readAndValidateAmount();
 
         /// TODO 2. 구매 금액에 맞게 로또 발행
+        List<Lotto> lottos = LottoGenerator.purchase(amount);
 
         /// TODO 3. 발행한 로또 출력
 
