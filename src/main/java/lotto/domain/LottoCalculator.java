@@ -23,4 +23,17 @@ public class LottoCalculator {
 
         return results;
     }
+
+    public static double calculateReturnRate(Map<Rank, Integer> results, int purchaseAmount) {
+        long total = 0;
+
+        for (Map.Entry<Rank, Integer> entry : results.entrySet()) {
+            Rank rank = entry.getKey();
+            int count = entry.getValue();
+
+            total += (long) rank.getReward() * count;
+        }
+
+        return (double) total / purchaseAmount * 100;
+    }
 }

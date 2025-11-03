@@ -26,7 +26,8 @@ public class Application {
         Map<Rank, Integer> results = LottoCalculator.calculateResults(lottos, winningNumbers, bonusNumber);
         LottoResults.printStatistics(results);
 
-        /// TODO 8. 수익률 출력
+        double returnRate = LottoCalculator.calculateReturnRate(results, amount);
+        LottoResults.printReturnRate(returnRate);
     }
 
     static int readAndValidateAmount() {
