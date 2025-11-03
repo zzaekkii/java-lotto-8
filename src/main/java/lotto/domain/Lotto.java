@@ -3,10 +3,7 @@ package lotto.domain;
 import camp.nextstep.edu.missionutils.Randoms;
 import lotto.exception.LottoException;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static lotto.exception.ErrorMessage.*;
 
@@ -40,7 +37,7 @@ public class Lotto {
     }
 
     public static Lotto create() {
-        List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, LOTTO_SIZE);
+        List<Integer> numbers = new ArrayList<>(Randoms.pickUniqueNumbersInRange(1, 45, LOTTO_SIZE));
         Collections.sort(numbers);
 
         return new Lotto(numbers);
@@ -48,5 +45,10 @@ public class Lotto {
 
     public List<Integer> getNumbers() {
         return numbers;
+    }
+
+    @Override
+    public String toString() {
+        return numbers.toString();
     }
 }
