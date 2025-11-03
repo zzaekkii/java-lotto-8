@@ -1,13 +1,16 @@
 package lotto;
 
 import lotto.domain.Lotto;
+import lotto.domain.LottoCalculator;
 import lotto.domain.LottoGenerator;
+import lotto.domain.Rank;
 import lotto.view.input.BonusNumber;
 import lotto.view.input.PurchaseAmount;
 import lotto.view.input.WinningNumbers;
 import lotto.view.output.PurchaseLotto;
 
 import java.util.List;
+import java.util.Map;
 
 public class Application {
     public static void main(String[] args) {
@@ -27,6 +30,7 @@ public class Application {
         int bonusNumber = readAndValidateBonusNumber(winningNumbers);
 
         /// TODO 6. 당첨 여부 확인
+        Map<Rank, Integer> results = LottoCalculator.calculateResults(lottos, winningNumbers, bonusNumber);
 
         /// TODO 7. 당첨 통계 출력
 
